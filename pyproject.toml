@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "siem-lite"
+version = "0.1.0"
+description = "A small, real log-parsing, detection, and correlation engine (SIEM-lite) for SSH auth, web access, and firewall logs."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Adeev Mardia" }]
+keywords = ["siem", "security", "log-analysis", "detection", "correlation", "cybersecurity"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+siem-lite = "siem_lite.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["siem_lite*"]
